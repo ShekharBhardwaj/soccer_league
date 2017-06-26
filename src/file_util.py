@@ -3,7 +3,7 @@ import json
 import logging
 import sys
 
-def file_loca_nam (csv_file_name_str, json_file_name_str):
+def csv_to_json (csv_file_name_str, json_file_name_str):
     try:
         logging.info("converting {} to {}".format(csv_file_name_str, json_file_name_str))
         csv_file = open(csv_file_name_str, "r")
@@ -14,19 +14,27 @@ def file_loca_nam (csv_file_name_str, json_file_name_str):
         logging.info("Conversion finish.")
         out = "[\n\t" + ",\n\t".join([json.dumps(row) for row in reader]) + "\n]"
         json_file.write(out)
+        return json_file_name_str
     except (OSError, IOError, TypeError) as e:
         logging.error("csv to json conversion failed: Caused by -> {}".format(e))
         
 
-
+def load_json(json_file_name_str):
+    
+    try:
+        with open(json_file_name_str) as json_file:
+            data = json.loads(json_file)
+            return data
+    except (TypeError) as e:
+        logging.error("Json file loading failed: Caused by -> {}".format(e))
 
 
 
 
 if __name__ == "__main__":
     logging.debug("Running module from main")
-    file_loca_nam (sys.argv[1], sys.argv[2])
-    
+    csv_to_json (sys.argv[1], sys.argv[2])
+    load_json(sys.argv[2])
     
     
     
