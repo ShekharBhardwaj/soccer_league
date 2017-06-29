@@ -35,14 +35,13 @@ def dividing_players(csv_file_name_str):
 
 
 def template(gaurdians,playername, team, jerseynumber):
-    welcome = " "*60 + "WELCOME TO THE SOCCER LEAGUE \n"
-    greetings = "Hello {}\n \n".format(gaurdians)
+    greetings = "Dear {}\n \n".format(gaurdians)
     subject = "Subject: Soccer Tournament practice session commencement\n \n"
     message1 = "   Your ward {}, is playing for Team {}, {} is going to dawn the Jersey Number {}.\n".format(playername, team, playername, jerseynumber)
     message2 ="We would like you to bring {} for their first day of practice session on Jul 27 2017, 4 PM to 7PM. \n \n".format(playername)
     closing = "Regards \n Game Co-ordinator\n Jun 27 2017"
 
-    return welcome+greetings+subject+message1+message2+closing
+    return greetings+subject+message1+message2+closing
 
 def file_io(all_teams):
 
