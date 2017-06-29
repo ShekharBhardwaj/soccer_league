@@ -55,7 +55,7 @@ def file_io(all_teams):
             teams.remove(rand_team_name)
             for player in team_x:
                 team_file.write(" {} | {} | {} |  {} \n".format(player["Name"], player["Height"], player["SoccerExperience"], player["GuardianName"]))
-                player_file_name = player["Name"].replace(" ", "_")
+                player_file_name = player["Name"].replace(" ", "_").lower()
                 with open(player_file_name+".txt", "w") as player_file:
                     player_file.write(template(player["GuardianName"], player["Name"], rand_team_name, player["JerseyNumber"]))
 
