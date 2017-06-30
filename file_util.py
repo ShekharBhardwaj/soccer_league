@@ -30,10 +30,10 @@ def csv_to_json(csv_file_name_str):
     with open(PLAYERS_JSON_FILE_NAME, "w") as json_file:
         json.dump(data, json_file)
     return data
-        
 
 
-    
+if __name__ == "__main__":
+    csv_to_json("soccer.players.csv")
     
     
     
