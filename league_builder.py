@@ -5,7 +5,7 @@ import sys
 # Function to be called when this module is imported, pass csv name
 #  file as an argument.
 def generate_teams(csv_file):
-    players_util.main(csv_file)
+    players_util.main_fn(csv_file)
 
 
 if __name__ == "__main__":
