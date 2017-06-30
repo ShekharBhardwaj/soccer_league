@@ -71,10 +71,6 @@ def main_fn(csv_file):
     file_io(dividing_players(csv_file))
 
 
-if __name__ == "__main__":
-    main_fn("soccer_players.csv")
-
-
 
 
 

@@ -32,8 +32,6 @@ def csv_to_json(csv_file_name_str):
     return data
 
 
-if __name__ == "__main__":
-    csv_to_json("soccer.players.csv")
     
     
     
